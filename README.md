@@ -1,5 +1,15 @@
 **NOTE** this is a fork of [symlink](gitlab.com/chris-morgan/symlink). There are not changes to this crate. But a fork is required as there has not been a published update in 8 years and this crate is exceptionally useful!
 
+## Migrating from symlink to symlink-rs
+
+As this is a fork of symlink, you can modify _only_ your `Cargo.toml` and none of your code.
+
+```diff
+- symlink = { git = "https://gitlab.com/chris-morgan/symlink" }
++ symlink = { package = "symlink-rs", version = "1.0.0" }
+```
+
+
 # `symlink-rs`: create (and delete) symlinks in a cross-platform manner
 
 Rust’s standard library exposes platform-specific ways to create symlinks:
