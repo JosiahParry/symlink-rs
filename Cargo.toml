@@ -1,0 +1,10 @@
+[package]
+name = "symlink"
+description = "Create symlinks in a cross-platform manner"
+authors = ["Chris Morgan <rust@chrismorgan.info>"]
+license = "BlueOak-1.0.0 OR MIT OR Apache-2.0"
+version = "0.1.0"
+readme = "README.md"
+keywords = ["file", "fs"]
+categories = ["filesystem"]
+repository = "https://git.chrismorgan.info/symlink"

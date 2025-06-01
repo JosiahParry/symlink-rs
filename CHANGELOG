@@ -1,0 +1,28 @@
+symlink 1.0.0 (unreleased)
+==========================
+
+Completely backwards-compatible, but I think it’s time to declare it 1.0.0 rather than releasing this as 0.1.1.
+
+• All functions are now available on all platforms.
+  Before, cfg(not(any(target_os = "redox", unix, windows))) platforms got an empty crate.
+  Now, the functions will fall back to std::fs::soft_link and std::fs::remove_file on other platforms,
+  which typically means trying to create a symlink will produce an std::io::ErrorKind::Unsupported error.
+
+  • But this does mean that wasm32-wasi now works (though untested).
+
+• I updated the documentation for correctness.
+  Most obviously, I said this crate wasn’t as useful as it looked because stable Windows couldn’t do symlinks yet.
+  Well, that was five years ago. For four and a half it has been able to.
+
+• I adjusted some stylistic conventions in code and comments throughout.
+  Things like links in the documentation, for example.
+
+• I have removed all mentions of Redox, including in cfg(target_os = "redox").
+  This used to be necessary, but in mid-2019 Redox became unix-family <https://github.com/rust-lang/rust/pull/60547>.
+
+• I now offer this crate under the BlueOak-1.0.0 license, as well the existing Apache-2.0 and MIT licenses.
+
+symlink 0.1.0 (2017-01-27)
+==========================
+
+initial release
